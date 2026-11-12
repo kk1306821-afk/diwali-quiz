@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🪔 Diwali Family Fun Quiz 2026 | Viral Family Edition</title>
+  <!-- Tailwind CSS for responsive layout and utility styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Poppins & Rozha One for festive Indian flair -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Rozha+One&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Custom Festive Theme & Animations */
+    :root {
+      --gold: #ffd700;
+      --amber: #ff9900;
+      --maroon: #4a0416;
+      --royal-purple: #240736;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top center, #5c0a21 0%, #2c063b 55%, #14021c 100%);
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+      margin: 0;
+    }
+
+    .festive-title {
+      font-family: 'Rozha One', serif;
+      letter-spacing: 0.5px;
+    }
+
+    /* Animated Mandala / Rangoli Background Glow */
+    .mandala-bg {
+      position: fixed;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      background: conic-gradient(
+        from 0deg,
+        rgba(255, 215, 0, 0.14),
+        rgba(255, 102, 0, 0.06),
+        rgba(255, 0, 128, 0.12),
+        rgba(255, 215, 0, 0.14)
+      );
+      filter: blur(28px);
+      animation: spinSlow 28s linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes spinSlow {
+      0% { transform: translateX(-50%) rotate(0deg); }
+      100% { transform: translateX(-50%) rotate(360deg); }
+    }
+
+    /* Glassmorphic Festive Card */
+    .quiz-card {
+      background: linear-gradient(145deg, rgba(59, 9, 32, 0.88), rgba(29, 6, 46, 0.92));
+      backdrop-filter: blur(14px);
+      border: 2px solid rgba(255, 215, 0, 0.45);
+      box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.65),
+        0 0 25px rgba(255, 166, 0, 0.25),
+        inset 0 0 20px rgba(255, 215, 0, 0.08);
+    }
+
+    /* Golden Shimmer Text */
+    .gold-gradient-text {
+      background: linear-gradient(90deg, #fff3a1 0%, #ffd700 35%, #ff9900 70%, #fff3a1 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 3.5s linear infinite;
+    }
+
+    @keyframes shimmer {
+      to { background-position: 200% center; }
+    }
+
+    /* Diya Flame Flicker */
+    .diya-flicker {
+      display: inline-block;
+      animation: flicker 1.4s ease-in-out infinite alternate;
+      transform-origin: bottom center;
+    }
+
+    @keyframes flicker {
+      0% { transform: scale(1) rotate(-2deg); filter: drop-shadow(0 0 6px #ff9900); }
+      50% { transform: scale(1.08) rotate(2deg); filter: drop-shadow(0 0 14px #ffd700); }
+      100% { transform: scale(0.97) rotate(-1deg); filter: drop-shadow(0 0 8px #ff6600); }
+    }
+
+    /* Floating Lanterns & Sparkles */
+    .floating-lantern {
+      position: fixed;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.28;
+      animation: floatUp linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(105vh) scale(0.8) rotate(-6deg);
+        opacity: 0;
+      }
+      15% { opacity: 0.35; }
+      85% { opacity: 0.35; }
+      100% {
+        transform: translateY(-15vh) scale(1.1) rotate(6deg);
+        opacity: 0;
+      }
+    }
+
+    /* Card Slide/Pop Entrance Animation */
+    .card-enter {
+      animation: cardPopIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    @keyframes cardPopIn {
+      0% {
+        opacity: 0;
+        transform: translateY(18px) scale(0.96);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* Interactive Option Buttons */
+    .option-btn {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 215, 0, 0.06));
+      border: 1.5px solid rgba(255, 215, 0, 0.32);
+      transition: all 0.22s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .option-btn:hover {
+      background: linear-gradient(135deg, #ff7b00, #ffb700);
+      color: #240736;
+      border-color: #fff3a1;
+      transform: translateY(-2px) scale(1.015);
+      box-shadow: 0 8px 20px rgba(255, 153, 0, 0.4);
+    }
+
+    .option-btn:active {
+      transform: scale(0.97);
+    }
+
+    .option-btn.selected {
+      background: linear-gradient(135deg, #ffd700, #ff8800);
+      color: #240736;
+      border-color: #ffffff;
+      font-weight: 700;
+      transform: scale(1.02);
+      box-shadow: 0 0 22px rgba(255, 215, 0, 0.7);
+    }
+
+    /* Primary Festive CTA Button */
+    .cta-btn {
+      background: linear-gradient(90deg, #ff6a00 0%, #ffb700 50%, #ff6a00 100%);
+      background-size: 200% auto;
+      color: #240736;
+      font-weight: 800;
+      box-shadow: 0 8px 25px rgba(255, 136, 0, 0.45);
+      transition: all 0.25s ease;
+    }
+
+    .cta-btn:hover {
+      background-position: right center;
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 12px 30px rgba(255, 183, 0, 0.65);
+    }
+
+    .cta-btn:active {
+      transform: scale(0.97);
+    }
+
+    /* Fireworks Canvas */
+    #fireworksCanvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    /* Custom Scrollbar for Result Breakdown */
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: rgba(255, 215, 0, 0.4);
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body class="flex flex-col justify-between items-center relative selection:bg-amber-400 selection:text-purple-950">
+
+  <!-- Ambient Mandala Glow -->
+  <div class="mandala-bg"></div>
+
+  <!-- Full-Screen Fireworks Canvas -->
+  <canvas id="fireworksCanvas"></canvas>
+
+  <!-- Floating Decorative Lanterns Container -->
+  <div id="lanternContainer" aria-hidden="true"></div>
+
+  <!-- Top Public Website Navbar -->
+  <header class="w-full max-w-4xl mx-auto px-4 pt-4 pb-2 flex items-center justify-between relative z-20">
+    <div class="flex items-center gap-2 bg-black/30 border border-amber-400/30 px-3.5 py-1.5 rounded-full backdrop-blur-md">
+      <span class="diya-flicker text-xl">🪔</span>
+      <span class="text-xs sm:text-sm font-bold tracking-wide text-amber-300 uppercase">Diwali Special 2026</span>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <!-- Live Player Counter Badge (Public Viral Vibe) -->
+      <div class="hidden sm:flex items-center gap-1.5 bg-black/30 border border-amber-400/25 px-3 py-1.5 rounded-full text-xs text-amber-100/90">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <span>48.2K+ Families Played</span>
+      </div>
+
+      <!-- Sound Effects Toggle Button -->
+      <button
+        id="soundToggleBtn"
+        onclick="toggleSound()"
+        aria-label="Toggle Festive Sound Effects"
+        class="flex items-center gap-1.5 bg-amber-500/20 hover:bg-amber-500/35 border border-amber-400/40 text-amber-200 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition cursor-pointer"
+      >
+        <span id="soundIcon">🔊</span>
+        <span id="soundLabel">Sound ON</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Quiz Container -->
+  <main class="w-full max-w-xl mx-auto px-4 my-auto py-4 relative z-20">
+    <!-- Toast Notification Box (Replaces alert()) -->
+    <div
+      id="toastMsg"
+      class="hidden mb-3 mx-auto max-w-md bg-rose-600/95 border border-amber-300 text-white text-sm font-semibold px-4 py-2.5 rounded-2xl shadow-lg text-center transition-all"
+    ></div>
+
+    <!-- Dynamic Card Box -->
+    <div id="quizBox" class="quiz-card rounded-3xl p-6 sm:p-8 text-center card-enter">
+      <!-- Initial Welcome Screen rendered by JS -->
+    </div>
+  </main>
+
+  <!-- Public Footer -->
+  <footer class="w-full text-center py-3 px-4 text-xs text-amber-200/70 relative z-20">
+    Made with ❤️ &amp; ✨ for Indian Families • Share &amp; Tag Your Family Group! 🪔
+  </footer>
+
+  <script>
+    /* =========================================================================
+       1. WEB AUDIO API FESTIVE SOUND ENGINE (No external audio URLs needed)
+       ========================================================================= */
+    let soundEnabled = true;
+    let audioCtx = null;
+
+    function initAudio() {
+      if (!audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (AudioContext) {
+          audioCtx = new AudioContext();
+        }
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    function toggleSound() {
+      soundEnabled = !soundEnabled;
+      const icon = document.getElementById('soundIcon');
+      const label = document.getElementById('soundLabel');
+      if (soundEnabled) {
+        initAudio();
+        icon.textContent = '🔊';
+        label.textContent = 'Sound ON';
+        playTone(660, 0.12, 'sine');
+      } else {
+        icon.textContent = '🔇';
+        label.textContent = 'Sound OFF';
+      }
+    }
+
+    function playTone(freq, duration = 0.15, type = 'triangle', delay = 0) {
+      if (!soundEnabled) return;
+      try {
+        initAudio();
+        if (!audioCtx) return;
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime + delay);
+
+        gain.gain.setValueAtTime(0.14, audioCtx.currentTime + delay);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + delay + duration);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start(audioCtx.currentTime + delay);
+        osc.stop(audioCtx.currentTime + delay + duration);
+      } catch (e) {
+        // Ignore audio errors on restricted browsers
+      }
+    }
+
+    function playClickChime() {
+      playTone(587.33, 0.1, 'sine', 0);      // D5
+      playTone(880, 0.18, 'triangle', 0.06); // A5
+    }
+
+    function playFanfare() {
+      const notes = [523.25, 659.25, 783.99, 1046.5]; // C5, E5, G5, C6
+      notes.forEach((n, idx) => playTone(n, 0.28, 'triangle', idx * 0.11));
+    }
+
+    function playFireworkPop() {
+      if (!soundEnabled || !audioCtx) return;
+      try {
+        const bufferSize = audioCtx.sampleRate * 0.18;
+        const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+        const data = buffer.getChannelData(0);
+        for (let i = 0; i < bufferSize; i++) {
+          data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (audioCtx.sampleRate * 0.04));
+        }
+        const noise = audioCtx.createBufferSource();
+        noise.buffer = buffer;
+
+        const filter = audioCtx.createBiquadFilter();
+        filter.type = 'bandpass';
+        filter.frequency.value = 900 + Math.random() * 900;
+
+        const gain = audioCtx.createGain();
+        gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.18);
+
+        noise.connect(filter);
+        filter.connect(gain);
+        gain.connect(audioCtx.destination);
+        noise.start();
+      } catch (e) {}
+    }
+
+    /* =========================================================================
+       2. HINGLISH FAMILY FUN QUESTIONS DATA (10 Relatable Questions)
+       ========================================================================= */
+    const quizQuestions = [
+      {
+        emoji: '🍬',
+        tag: 'Mithai Raid',
+        question: 'Ghar me sabse zyada mithai (especially Kaju Katli) kaun chhupa kar khata hai?',
+        options: [
+          { label: '👨 Papa', value: 'Papa' },
+          { label: '👩 Mummy', value: 'Mummy' },
+          { label: '😎 Main (Khud)', value: 'Main' },
+          { label: '🧒 Bhai / Behen', value: 'Bhai/Behen' },
+          { label: '👨‍👩‍👧‍👦 Sab Milkar', value: 'Sab' }
+        ]
+      },
+      {
+        emoji: '🛍️',
+        tag: 'Budget Alert',
+        question: 'Diwali shopping ke naam par sabse zyada kharcha kaun karta hai?',
+        options: [
+          { label: '👨 Papa', value: 'Papa' },
+          { label: '👩 Mummy', value: 'Mummy' },
+          { label: '😎 Main (Khud)', value: 'Main' },
+          { label: '🧒 Bhai / Behen', value: 'Bhai/Behen' },
+          { label: '👨‍👩‍👧‍👦 Sab Barabar', value: 'Sab' }
+        ]
+      },
+      {
+        emoji: '🧹',
+        tag: 'Safai Abhiyan',
+        question: 'Ghar ki safai (Diwali cleaning) me sabse zyada kaamchori kaun karta hai?',
+        options: [
+          { label: '👨 Papa', value: 'Papa' },
+          { label: '👩 Mummy', value: 'Mummy' },
+          { label: '😎 Main (Khud)', value: 'Main' },
+          { label: '🧒 Bhai / Behen', value: 'Bhai/Behen' },
+          { label: '👨‍👩‍👧‍👦 Sab Bahaane Banate Hain', value: 'Sab' }
+        ]
+      },
+      {
+        emoji: '😂',
+        tag: 'Comedy King/Queen',
+        question: 'Sabse funny family member kaun hai jo har mahol me sabko hasata hai?',
+        options: [
+          { label: '👨 Papa', value: 'Papa' },
+          { label: '👩 Mummy', value: 'Mummy' },
+          { label: '😎 Main (Khud)', value: 'Main' },
+          { label: '🧒 Bhai / Behen', value: 'Bhai/Behen' },
+          { label: '👨‍👩‍👧‍👦 Poora Ghar Comedy Circus Hai', value: 'Sab' }
+        ]
+      },
+      {
+        emoji: '😴',
+        tag: 'Kumbhakaran Award',
+        question: 'Diwali ki subah sabse late kaun uthta hai?',
+        options: [
+          { label: '👨 Papa', value: 'Papa' },
+          { label: '👩 Mummy', value: 'Mummy' },
+          { label: '😎 Main (Khud)', value: 'Main' },
+          { label: '🧒 Bhai / Behen', value: 'Bhai/Behen' },
+          { label: '👨‍👩‍👧‍👦 Sab 11 Baje Tak', value: 'Sab' }
+        ]
+      },
+      {
+        emoji: '💸',
+        tag: 'Shagun & Bonus',
+        question: 'Diwali bonus ya shagun ke paise sabse jaldi kaun udayega?',
+        options: [
+          { label: '👨 Papa', value: 'Papa' },
+          { label: '👩 Mummy', value: 'Mummy' },
+          { label: '😎 Main (Khud)', value: 'Main' },
+          { label: '🧒 Bhai / Behen', value: 'Bhai/Behen' },
+          { label: '👨‍👩‍👧‍👦 Sab Ek Hi Din Me', value: 'Sab' }
+        ]
+      },
+      {
+        emoji: '🧨',
+        tag: 'Patakha Squad',
+        question: 'Patakhe jalane me sabse zyada darpok kaun hai (door se dekhne wala)?',
+        options: [
+          { label: '👨 Papa', value: 'Papa' },
+          { label: '👩 Mummy', value: 'Mummy' },
+          { label: '😎 Main (Khud)', value: 'Main' },
+          { label: '🧒 Bhai / Behen', value: 'Bhai/Behen' },
+          { label: '👨‍👩‍👧‍👦 Sab Kaan Band Karke Khade Rehte Hain', value: 'Sab' }
+        ]
+      },
+      {
+        emoji: '🎨',
+        tag: 'Rangoli Artist',
+        question: 'Rangoli banane me sabse zyada time aur perfection kaun dikhata hai?',
+        options: [
+          { label: '👨 Papa', value: 'Papa' },
+          { label: '👩 Mummy', value: 'Mummy' },
+          { label: '😎 Main (Khud)', value: 'Main' },
+          { label: '🧒 Bhai / Behen', value: 'Bhai/Behen' },
+          { label: '👨‍👩‍👧‍👦 Sab Milkar Bigadte Hain', value: 'Sab' }
+        ]
+      },
+      {
+        emoji: '🥜',
+        tag: 'Guest Special',
+        question: 'Guests aane par sabse pehle namkeen aur dry fruits par kaun toot padta hai?',
+        options: [
+          { label: '👨 Papa', value: 'Papa' },
+          { label: '👩 Mummy', value: 'Mummy' },
+          { label: '😎 Main (Khud)', value: 'Main' },
+          { label: '🧒 Bhai / Behen', value: 'Bhai/Behen' },
+          { label: '👨‍👩‍👧‍👦 Sab Guests Ke Jaate Hi', value: 'Sab' }
+        ]
+      },
+      {
+        emoji: '📸',
+        tag: 'Insta & Reels Star',
+        question: 'Diwali par sabse zyada selfies aur reels kaun banata hai?',
+        options: [
+          { label: '👨 Papa', value: 'Papa' },
+          { label: '👩 Mummy', value: 'Mummy' },
+          { label: '😎 Main (Khud)', value: 'Main' },
+          { label: '🧒 Bhai / Behen', value: 'Bhai/Behen' },
+          { label: '👨‍👩‍👧‍👦 Sab Full Photoshoot Karte Hain', value: 'Sab' }
+        ]
+      }
+    ];
+
+    /* =========================================================================
+       3. QUIZ STATE & PERSONALIZED REPORT CARD PROFILES
+       ========================================================================= */
+    let playerName = '';
+    let currentQuestionIndex = 0;
+    let userAnswers = []; // Stores { tag, question, answer }
+    let fireworkInterval = null;
+
+    const familyTitles = {
+      Main: {
+        badge: '🏆 Certified Mithai Chor & Chief Entertainer',
+        subtitle: 'Aap hi ghar ke asli rockstar ho! Kaamchori se lekar Kaju Katli gayab karne tak, har jagah aapka hi jalwa hai.'
+      },
+      Mummy: {
+        badge: '👑 Ghar Ki Asli CEO & Shopping Queen',
+        subtitle: 'Mummy ke bina Diwali adhoori hai! Safai inspection se lekar best bargaining tak, Mummy sabki boss hain.'
+      },
+      Papa: {
+        badge: '💳 Family ATM & Senior Patakha Inspector',
+        subtitle: 'Budget sambhalna ho ya door se patakhon par gyaan dena, Papa hi ghar ke asli pillar aur superhero hain!'
+      },
+      'Bhai/Behen': {
+        badge: '🎭 Certified Drama Partner & Selfie Star',
+        subtitle: 'Ladai-jhagde se lekar shagun ke paise ginne tak, Bhai/Behen ke bina Diwali ka maza bilkul feeka hai!'
+      },
+      Sab: {
+        badge: '🌟 Hum Saath Saath Hain — Blockbuster Family',
+        subtitle: 'Aapki family me ekta ki misaal hai! Mithai khani ho ya masti karni ho, poora parivaar ek hi team hai.'
+      }
+    };
+
+    /* =========================================================================
+       4. UI HELPER & SCREEN RENDERERS
+       ========================================================================= */
+    function showToast(message) {
+      const toast = document.getElementById('toastMsg');
+      toast.textContent = message;
+      toast.classList.remove('hidden');
+      playTone(300, 0.18, 'sawtooth');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 2800);
+    }
+
+    function animateCardSwap(htmlContent) {
+      const box = document.getElementById('quizBox');
+      box.classList.remove('card-enter');
+      void box.offsetWidth; // Trigger reflow for smooth restart
+      box.innerHTML = htmlContent;
+      box.classList.add('card-enter');
+    }
+
+    function renderStartScreen() {
+      stopFireworks();
+      currentQuestionIndex = 0;
+      userAnswers = [];
+
+      const html = `
+        <div class="inline-flex items-center gap-2 bg-amber-400/15 border border-amber-400/40 px-4 py-1 rounded-full text-amber-300 text-xs font-semibold mb-4">
+          <span>✨ 10 Mazedaar Family Sawaal</span>
+        </div>
+
+        <div class="text-5xl sm:text-6xl mb-3 flex justify-center gap-3">
+          <span class="diya-flicker">🪔</span>
+          <span>🎆</span>
+          <span class="diya-flicker">🪔</span>
+        </div>
+
+        <h1 class="festive-title text-3xl sm:text-5xl gold-gradient-text mb-2 leading-tight">
+          Diwali Family Fun Quiz
+        </h1>
+
+        <p class="text-amber-100/85 text-sm sm:text-base mb-6 max-w-md mx-auto leading-relaxed">
+          Pata lagao ghar me kaun hai asli <span class="text-amber-300 font-semibold">Mithai Chor</span>, kaun hai <span class="text-amber-300 font-semibold">Kaamchor</span> aur kisko milega <span class="text-amber-300 font-semibold">Diwali Superstar</span> ka title!
+        </p>
+
+        <div class="max-w-sm mx-auto space-y-4">
+          <div class="text-left">
+            <label for="playerNameInput" class="block text-xs font-semibold uppercase tracking-wider text-amber-300 mb-1.5 ml-1">
+              Apna Shubh Naam Likhein 👇
+            </label>
+            <input
+              id="playerNameInput"
+              type="text"
+              maxlength="28"
+              value="${escapeHtml(playerName)}"
+              placeholder="Jaise: Aarav, Priya, Sharma Family..."
+              onkeydown="if(event.key === 'Enter') startQuiz()"
+              class="w-full px-4 py-3.5 rounded-2xl bg-black/40 border-2 border-amber-400/45 text-white placeholder-amber-200/45 focus:outline-none focus:border-amber-300 focus:ring-2 focus:ring-amber-400/30 text-base font-medium transition"
+            />
+          </div>
+
+          <button
+            onclick="startQuiz()"
+            class="cta-btn w-full py-3.5 px-6 rounded-2xl text-lg tracking-wide flex items-center justify-center gap-2 cursor-pointer"
+          >
+            <span>Start Diwali Quiz</span>
+            <span>🚀</span>
+          </button>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-amber-400/15 flex items-center justify-center gap-4 text-xs text-amber-200/75">
+          <span>⚡ 1 Minute Fun</span>
+          <span>•</span>
+          <span>📜 Family Report Card</span>
+          <span>•</span>
+          <span>📲 WhatsApp Share</span>
+        </div>
+      `;
+
+      animateCardSwap(html);
+    }
+
+    function startQuiz() {
+      const inputEl = document.getElementById('playerNameInput');
+      const entered = inputEl ? inputEl.value.trim() : '';
+      if (!entered) {
+        showToast('🙏 Pehle apna naam toh likhiye taaki Diwali card ban sake!');
+        if (inputEl) inputEl.focus();
+        return;
+      }
+
+      playerName = entered;
+      currentQuestionIndex = 0;
+      userAnswers = [];
+      playClickChime();
+      renderQuestion();
+    }
+
+    function renderQuestion() {
+      const q = quizQuestions[currentQuestionIndex];
+      const total = quizQuestions.length;
+      const progressPercent = Math.round(((currentQuestionIndex + 1) / total) * 100);
+
+      const optionsHtml = q.options
+        .map(
+          (opt, idx) => `
+          <button
+            onclick="selectOption('${opt.value.replace(/'/g, "\\'")}', this)"
+            class="option-btn w-full py-3.5 px-5 rounded-2xl text-left text-base sm:text-lg font-semibold text-amber-50 flex items-center justify-between cursor-pointer group"
+          >
+            <span>${opt.label}</span>
+            <span class="text-amber-300/70 group-hover:text-purple-950 text-sm font-bold transition">→</span>
+          </button>
+        `
+        )
+        .join('');
+
+      const html = `
+        <!-- Top Player & Progress Bar -->
+        <div class="mb-5">
+          <div class="flex items-center justify-between text-xs sm:text-sm font-semibold text-amber-200/90 mb-2">
+            <span class="bg-amber-400/15 border border-amber-400/30 px-3 py-1 rounded-full">
+              🎉 ${escapeHtml(playerName)}
+            </span>
+            <span class="text-amber-300 font-bold">
+              Question ${currentQuestionIndex + 1} of ${total}
+            </span>
+          </div>
+
+          <!-- Progress Track with Moving Diya -->
+          <div class="w-full h-3 bg-black/50 rounded-full p-0.5 border border-amber-400/30 relative overflow-visible">
+            <div
+              class="h-full rounded-full bg-gradient-to-r from-orange-500 via-amber-400 to-yellow-300 transition-all duration-500 relative"
+              style="width: ${progressPercent}%"
+            >
+              <span class="absolute -right-2.5 -top-3 text-base diya-flicker">🪔</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question Tag & Emoji -->
+        <div class="inline-block bg-rose-500/25 border border-rose-400/40 text-rose-200 text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full mb-2">
+          ${q.tag}
+        </div>
+        <div class="text-4xl sm:text-5xl mb-2">${q.emoji}</div>
+
+        <!-- Question Text -->
+        <h2 class="text-xl sm:text-2xl font-bold text-white leading-snug mb-6">
+          ${q.question}
+        </h2>
+
+        <!-- Options List -->
+        <div class="space-y-3">
+          ${optionsHtml}
+        </div>
+      `;
+
+      animateCardSwap(html);
+    }
+
+    let isTransitioning = false;
+    function selectOption(chosenValue, btnElement) {
+      if (isTransitioning) return;
+      isTransitioning = true;
+
+      // Highlight selected button
+      if (btnElement) {
+        btnElement.classList.add('selected');
+      }
+      playClickChime();
+
+      const currentQ = quizQuestions[currentQuestionIndex];
+      userAnswers.push({
+        tag: currentQ.tag,
+        emoji: currentQ.emoji,
+        question: currentQ.question,
+        answer: chosenValue
+      });
+
+      setTimeout(() => {
+        isTransitioning = false;
+        if (currentQuestionIndex < quizQuestions.length - 1) {
+          currentQuestionIndex++;
+          renderQuestion();
+        } else {
+          renderFinale();
+        }
+      }, 320);
+    }
+
+    function calculateTopPick() {
+      const counts = {};
+      userAnswers.forEach((item) => {
+        counts[item.answer] = (counts[item.answer] || 0) + 1;
+      });
+
+      let topMember = 'Sab';
+      let maxCount = 0;
+      for (const [member, count] of Object.entries(counts)) {
+        if (count > maxCount) {
+          maxCount = count;
+          topMember = member;
+        }
+      }
+      return { topMember, maxCount, counts };
+    }
+
+    function renderFinale() {
+      playFanfare();
+      startFireworks();
+
+      const { topMember, maxCount } = calculateTopPick();
+      const profile = familyTitles[topMember] || familyTitles.Sab;
+
+      const summaryListHtml = userAnswers
+        .map(
+          (item, i) => `
+          <div class="flex items-center justify-between bg-black/35 border border-amber-400/20 rounded-xl px-3.5 py-2 text-left text-xs sm:text-sm">
+            <span class="text-amber-100/90 truncate pr-2">
+              <strong class="text-amber-300">Q${i + 1}.</strong> ${item.emoji} ${item.tag}
+            </span>
+            <span class="shrink-0 bg-amber-400/20 text-amber-200 font-bold px-2.5 py-0.5 rounded-lg border border-amber-400/30">
+              ${escapeHtml(item.answer)}
+            </span>
+          </div>
+        `
+        )
+        .join('');
+
+      const html = `
+        <div class="text-4xl sm:text-5xl mb-2 flex justify-center gap-2">
+          <span>🎆</span>
+          <span class="diya-flicker">🪔</span>
+          <span>🎇</span>
+        </div>
+
+        <h1 class="festive-title text-3xl sm:text-5xl gold-gradient-text mb-1">
+          ✨ HAPPY DIWALI ✨
+        </h1>
+
+        <p class="text-amber-200 text-sm sm:text-base font-medium mb-4">
+          Heartfelt Diwali Wishes To <span class="text-white font-bold underline decoration-amber-400">${escapeHtml(playerName)}</span> &amp; Your Entire Family! ❤️
+        </p>
+
+        <!-- Personalized Family Report Card Box -->
+        <div class="bg-gradient-to-br from-amber-500/20 via-rose-500/15 to-purple-900/40 border-2 border-amber-400/60 rounded-2xl p-4 sm:p-5 mb-5 shadow-inner">
+          <div class="text-xs uppercase tracking-widest text-amber-300 font-bold mb-1">
+            📜 Official Family Report Card
+          </div>
+          <div class="text-lg sm:text-xl font-extrabold text-white mb-1.5">
+            ${profile.badge}
+          </div>
+          <p class="text-xs sm:text-sm text-amber-100/90 leading-relaxed mb-2">
+            ${profile.subtitle}
+          </p>
+          <div class="inline-block bg-black/40 text-amber-300 text-xs font-semibold px-3 py-1 rounded-full border border-amber-400/30">
+            Most Nominated: <strong>${escapeHtml(topMember)}</strong> (${maxCount}/${quizQuestions.length} baar)
+          </div>
+        </div>
+
+        <!-- Collapsible / Scrollable Answer Summary -->
+        <div class="mb-5 text-left">
+          <div class="text-xs font-bold uppercase tracking-wider text-amber-300 mb-2 flex items-center justify-between">
+            <span>📋 Aapke Mazedaar Jawab:</span>
+            <span class="text-amber-200/60 font-normal">Scroll to view all</span>
+          </div>
+          <div class="max-h-40 overflow-y-auto custom-scroll space-y-1.5 pr-1">
+            ${summaryListHtml}
+          </div>
+        </div>
+
+        <!-- Action Buttons: WhatsApp Viral Share & Play Again -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <button
+            onclick="shareOnWhatsApp()"
+            class="w-full py-3.5 px-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-400 hover:to-green-500 text-white font-bold text-sm sm:text-base shadow-lg shadow-emerald-900/50 flex items-center justify-center gap-2 transition transform hover:-translate-y-0.5 cursor-pointer"
+          >
+            <span>📲</span>
+            <span>Share on WhatsApp</span>
+          </button>
+
+          <button
+            onclick="renderStartScreen()"
+            class="cta-btn w-full py-3.5 px-4 rounded-2xl text-sm sm:text-base flex items-center justify-center gap-2 cursor-pointer"
+          >
+            <span>🔄</span>
+            <span>Play Again</span>
+          </button>
+        </div>
+      `;
+
+      animateCardSwap(html);
+    }
+
+    function shareOnWhatsApp() {
+      playClickChime();
+      const { topMember } = calculateTopPick();
+      const profile = familyTitles[topMember] || familyTitles.Sab;
+      const pageUrl = window.location.href;
+
+      const shareText =
+        `🪔 *DIWALI FAMILY FUN QUIZ 2026* 🎆\n\n` +
+        `Maine abhi *${playerName}* ke naam se Diwali Family Quiz khela aur mujhe mila:\n` +
+        `*${profile.badge}* 🏆\n\n` +
+        `Ghar me sabse bada Mithai Chor kaun hai? 🍬 Ab tumhari baari hai! 👇\n` +
+        `${pageUrl}`;
+
+      const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}`;
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    /* =========================================================================
+       5. FLOATING AMBIENT LANTERNS & DIWALI EMOJIS
+       ========================================================================= */
+    function createFloatingLanterns() {
+      const container = document.getElementById('lanternContainer');
+      const items = ['🏮', '🪔', '✨', '🎇'];
+      for (let i = 0; i < 12; i++) {
+        const el = document.createElement('div');
+        el.className = 'floating-lantern';
+        el.textContent = items[i % items.length];
+        el.style.left = `${Math.random() * 94}%`;
+        el.style.fontSize = `${18 + Math.random() * 18}px`;
+        el.style.animationDuration = `${12 + Math.random() * 14}s`;
+        el.style.animationDelay = `${-Math.random() * 15}s`;
+        container.appendChild(el);
+      }
+    }
+
+    /* =========================================================================
+       6. REALISTIC GRAND FINALE CANVAS FIREWORKS ANIMATION
+       ========================================================================= */
+    const canvas = document.getElementById('fireworksCanvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let animationFrameId = null;
+    let fireworksActive = false;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+
+    class Particle {
+      constructor(x, y, color) {
+        this.x = x;
+        this.y = y;
+        this.color = color;
+        const angle = Math.random() * Math.PI * 2;
+        const speed = Math.random() * 5.5 + 1.5;
+        this.vx = Math.cos(angle) * speed;
+        this.vy = Math.sin(angle) * speed;
+        this.alpha = 1;
+        this.decay = Math.random() * 0.018 + 0.012;
+        this.gravity = 0.06;
+        this.size = Math.random() * 2.5 + 1.5;
+      }
+
+      update() {
+        this.vx *= 0.97;
+        this.vy *= 0.97;
+        this.vy += this.gravity;
+        this.x += this.vx;
+        this.y += this.vy;
+        this.alpha -= this.decay;
+      }
+
+      draw() {
+        ctx.save();
+        ctx.globalAlpha = Math.max(0, this.alpha);
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = this.color;
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    function launchFireworkBurst() {
+      const colors = ['#ffd700', '#ff6600', '#ff007f', '#00f0ff', '#adff2f', '#ffffff'];
+      const x = Math.random() * (canvas.width * 0.8) + canvas.width * 0.1;
+      const y = Math.random() * (canvas.height * 0.45) + canvas.height * 0.1;
+      const color = colors[Math.floor(Math.random() * colors.length)];
+
+      for (let i = 0; i < 48; i++) {
+        particles.push(new Particle(x, y, color));
+      }
+      playFireworkPop();
+    }
+
+    function animateFireworks() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (let i = particles.length - 1; i >= 0; i--) {
+        particles[i].update();
+        particles[i].draw();
+        if (particles[i].alpha <= 0) {
+          particles.splice(i, 1);
+        }
+      }
+
+      if (fireworksActive || particles.length > 0) {
+        animationFrameId = requestAnimationFrame(animateFireworks);
+      }
+    }
+
+    function startFireworks() {
+      fireworksActive = true;
+      resizeCanvas();
+      launchFireworkBurst();
+      setTimeout(launchFireworkBurst, 350);
+
+      if (fireworkInterval) clearInterval(fireworkInterval);
+      fireworkInterval = setInterval(() => {
+        if (fireworksActive) {
+          launchFireworkBurst();
+        }
+      }, 900);
+
+      if (!animationFrameId) {
+        animateFireworks();
+      }
+    }
+
+    function stopFireworks() {
+      fireworksActive = false;
+      if (fireworkInterval) {
+        clearInterval(fireworkInterval);
+        fireworkInterval = null;
+      }
+      particles = [];
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+        animationFrameId = null;
+      }
+    }
+
+    // Initialize Application on Load
+    window.onload = function () {
+      resizeCanvas();
+      createFloatingLanterns();
+      renderStartScreen();
+    };
+  </script>
+</body>
+</html>
